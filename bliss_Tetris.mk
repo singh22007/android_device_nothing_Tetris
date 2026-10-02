@@ -15,13 +15,15 @@ $(call inherit-product, vendor/infinity/config/common_mobile_full.mk)
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
-
-BLISS_BUILDTYPE := OFFICIAL
-EXTRA_UDFPS_ANIMATIONS := true
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := SINGH
+TARGET_SUPPORTS_BLUR := true
+WITH_GAPPS := true
+TARGET_SHIPS_FULL_GAPPS := true
 TARGET_HAS_UDFPS := true
-GAPPS_ARCH := arm64
 
-PRODUCT_NAME := bliss_Tetris
+
+PRODUCT_NAME := Infinity_Tetris
 PRODUCT_DEVICE := Tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
