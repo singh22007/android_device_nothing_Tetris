@@ -364,13 +364,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMinFreq",
       "Duration": 1500,
-      "Value": "1700000"
+      "Value": "1800000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMaxFreq",
       "Duration": 1500,
-      "Value": "2500000"
+      "Value": "2300000"
     },
     {
       "PowerHint": "INTERACTION",
@@ -406,7 +406,7 @@
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
       "Duration": 5000,
-      "Value": "60"
+      "Value": "70"
     },
     {
       "PowerHint": "INTERACTION",
@@ -424,7 +424,7 @@
       "PowerHint": "LAUNCH",
       "Node": "CPUSuperClusterMinFreq",
       "Duration": 1500,
-      "Value": "2500000"
+      "Value": "2000000"
     },
     {
       "PowerHint": "LAUNCH",
