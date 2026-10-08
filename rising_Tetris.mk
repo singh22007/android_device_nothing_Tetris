@@ -10,23 +10,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Tetris device
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
-# Inherit some common Infinity stuff.
-$(call inherit-product, vendor/infinity/config/common_mobile_full.mk)
+# Inherit some common RISING stuff.
+$(call inherit-product, vendor/lineage/config/common_mobile_full.mk)
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
-INFINITY_BUILD_TYPE := OFFICIAL
-INFINITY_MAINTAINER := SINGH
+RISING_BUILD_TYPE := OFFICIAL
+RISING_MAINTAINER := SINGH
 TARGET_SUPPORTS_BLUR := true
-WITH_GAPPS := true
+WITH_GMS := true
 TARGET_SHIPS_FULL_GAPPS := true
 TARGET_HAS_UDFPS := true
 
 
-INFINITY_PRODUCT_NAME := infinity_Tetris
-INFINITY_PRODUCT_DEVICE := Tetris
-INFINITY_PRODUCT_BRAND := Nothing
-INFINITY_PRODUCT_MANUFACTURER := Nothing
+RISING_PRODUCT_NAME := RISING_Tetris
+RISING_PRODUCT_DEVICE := Tetris
+RISING_PRODUCT_BRAND := Nothing
+RISING_PRODUCT_MANUFACTURER := Nothing
 INIFINITY_PRODUCT_MODEL := A015
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
