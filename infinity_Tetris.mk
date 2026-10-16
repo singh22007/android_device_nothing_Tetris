@@ -7,25 +7,26 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-TARGET_AVB_DISABLE_DM_VERITY := true
-
 # Inherit from Tetris device
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
 # Inherit common LineageOS configuration.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
+INFINITY_BUILD_TYPE := UNOFFICIAL
+INFINITY_MAINTAINER := SINGH
+TARGET_SUPPORTS_BLUR := true
+WITH_GAPPS := true
 PRODUCT_NAME := lineage_Tetris
 PRODUCT_DEVICE := Tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
-PRODUCT_MODEL := A015
+PRODUCT_MODEL := CMF Phone 1
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 DEVICE_CODENAME := Tetris
 
-TARGET_UNOFFICIAL_BUILD_ID := Lufrz
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="sys_mssi_64_64only_ww_armv82-user 16 BP2A.250605.031.A3 2606151652 release-keys" \
