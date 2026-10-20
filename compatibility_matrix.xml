@@ -34,4 +34,29 @@
             <instance>default</instance>
         </interface>
     </hal>
-</compatibility-matrix>
+      <!-- Include Android Framework Power HAL Interfaces -->
+    <hal format="aidl" optional="true">
+        <name>android.hardware.power</name>
+        <version>1-5</version>
+        <interface>
+            <name>IPower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+<!-- Include MediaTek Hardware Power Framework Extensions -->
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.mtkpower</name>
+        <version>1</version>
+        <interface>
+            <name>IMtkPower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.perfmenu</name>
+        <interface>
+            <name>IPerfMenu</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+ </compatibility-matrix>
