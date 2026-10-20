@@ -10,7 +10,7 @@ KERNEL_PATH := $(DEVICE_PATH)-kernel
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := cortex-a76
+TARGET_CPU_VARIANT := cortex-a78
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := Tetris
@@ -122,6 +122,12 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6878
+BOARD_HAS_MTK_HARDWARE := true
+BOARD_USES_MTK_HARDWARE := true
+
+# Power & Performance Architecture
+TARGET_USES_MTK_POWER_HAL := true
+BOARD_USES_MTK_PERF_SERVICE := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
