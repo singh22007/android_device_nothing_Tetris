@@ -159,7 +159,7 @@ debug.sf.late.sf.duration=14600000
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.set_binder_thread_rt=1
 debug.sf.use_phase_offsets_as_durations=1
-ro.hardware.gralloc=common
+ro.hardware.gralloc=mt6878
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
@@ -303,6 +303,12 @@ ro.vendor.mtk_emmc_support=1
 ro.vendor.mtk_f2fs_enable=1
 ro.vendor.mtk_fd_support=1
 
+# FPSGO & Frame Tracking Engine
+ro.vendor.mtk_fpsgo_support=1
+vendor.mtk.fbt.enable=1
+persist.vendor.fbt.brm=1
+persist.vendor.fbt.game_boost=1
+
 # Fingerprint
 ro.vendor.fingerprint.sensor_location=540|2109|93
 ro.vendor.fingerprint.type=udfps_optical
@@ -358,6 +364,17 @@ ro.vendor.mediatek.version.release=alps-mp-u0.mp1.rc-V6.4_nothing.u0mp1rc.k6989v
 ro.vendor.mgk_name=mgk_64_k61
 ro.vendor.mgvi_name=mgvi_64_64only_ww_armv82
 ro.vendor.mml.mtk_mml_support=1
+
+# Mediatek Performance Framework
+ro.vendor.mtk_powerhal_support=1
+ro.vendor.powerhal.config.path=/vendor/etc/powerscntbl.cfg
+vendor.powerhal.init=1
+
+# MediaTek Core Control & Scheduling Hints
+ro.vendor.mtk_perfservice_support=1
+persist.vendor.powerhal.perfmode=0
+ro.vendor.perf.scroll_boost=1
+
 
 # Media
 media.c2.dmabuf.padding=3072
@@ -516,6 +533,11 @@ vendor.rild.libpath=mtk-ril.so
 ro.vendor.init.sensor.rc=init.sensor_2_0.rc
 ro.vendor.mtk.sensor.support=yes
 ro.vendor.mtk_thermal_2_0=1
+
+# Task Placement & EAS Enhancements
+persist.sys.uclamp.perf_boost=1
+ro.vendor.mtk_sched_bl_boost=1
+
 
 # USB
 vendor.usb.controller=11201000.usb0
