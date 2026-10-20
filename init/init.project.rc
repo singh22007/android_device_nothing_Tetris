@@ -20,13 +20,7 @@ on fs
 
 on post-fs-data
 
-# Allow display rendering loops to push screen brightness hints to SMB safely
-    chown system graphics /proc/smb/ScreenComm
-    chmod 0664 /proc/smb/ScreenComm
 
-# Open system power states for display-driven scheduler boosts
-    chown system graphics /dev/spm
-    chmod 0664 /dev/spm
 
 #Camera
     chmod 0660 /dev/MAINAF
@@ -92,8 +86,10 @@ on post-fs-data
     chmod 0777 /data/vendor/camera
 
 #SMB
-    chown system system /proc/smb/ScreenComm
-    chmod 0660 /proc/smb/ScreenComm
+ # Allow display rendering loops to push screen brightness hints to SMB safely
+    chown system graphics /proc/smb/ScreenComm
+    chmod 0664 /proc/smb/ScreenComm
 
-    chmod 0660 /dev/spm
-    chown system system /dev/spm
+# Open system power states for display-driven scheduler boosts
+    chown system graphics /dev/spm
+    chmod 0664 /dev/spm
