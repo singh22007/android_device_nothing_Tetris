@@ -96,18 +96,28 @@ on post-fs-data
 
 on boot
     # boot perf. tune
-    write /dev/cpuctl/rt/cpu.uclamp.min 100
+    write /dev/cpuctl/rt/cpu.uclamp.min 60
     write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/system-background/cpu.uclamp.min 100
-    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 100
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/foreground/cpu.uclamp.min 30
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground_window/cpu.uclamp.min 100
+    write /dev/cpuctl/foreground_window/cpu.uclamp.min 30
     write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 100
+    write /dev/cpuctl/top-app/cpu.uclamp.min 50
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/background/cpu.uclamp.min 100
-    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
+  
+# Allow MediaTek PowerHAL to alter core constraints at runtime
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
+
+    # Open core control and hotplug capabilities to system
+    chown system system /sys/devices/system/cpu/perf/core_ctl/enable
+    chmod 0664 /sys/devices/system/cpu/perf/core_ctl/enable
 
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/nr_requests 64
@@ -140,6 +150,14 @@ on property:sys.boot_completed=1
     # restore boot perf. tune
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "schedutil"
+
+   # Set hardcoded polling frequency thresholds (1ms)
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/rate_limit_us 1000
+
+    # Fire MediaTek Core Control Engine
+    write /sys/devices/system/cpu/perf/core_ctl/enable 1
+
 
     # Utilization Clamping
     # Tuning
