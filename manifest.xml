@@ -213,4 +213,21 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::ITui/default</fqname>
     </hal>
+      <!-- MediaTek Power & Performance AIDL Infrastructure -->
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.mtkpower</name>
+        <version>1</version>
+        <fqname>IMtkPower/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.perfmenu</name>
+        <fqname>IPerfMenu/default</fqname>
+    </hal>
+
+    <!-- Android Standard Power Management Wrapper -->
+    <hal format="aidl">
+        <name>android.hardware.power</name>
+        <version>5</version>
+        <fqname>IPower/default</fqname>
+    </hal>
 </manifest>
