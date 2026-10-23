@@ -98,8 +98,18 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 2400
 
 # Camera
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
+    android.hardware.camera.common-V1-ndk.vendor \
+    android.hardware.camera.common-V2-ndk.vendor \
+    android.hardware.camera.device-V2-ndk.vendor \
+    android.hardware.camera.device@1.0.vendor \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.metadata-V2-ndk.vendor \
+    android.hardware.camera.provider-V2-ndk.vendor \
+    android.hardware.camera.provider@2.6.vendor
+
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
@@ -127,7 +137,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, hardware/dolby/dolby.mk)
 
 PRODUCT_PACKAGES += \
-    LunarisDolby
+    DolbyAtmos
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -163,6 +173,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health-service.mediatek \
     android.hardware.health-service.mediatek-recovery
+   
 
 $(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
 $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
