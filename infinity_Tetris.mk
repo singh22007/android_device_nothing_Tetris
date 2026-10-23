@@ -14,9 +14,10 @@ $(call inherit-product, device/nothing/Tetris/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 INFINITY_BUILD_TYPE := UNOFFICIAL
-INFINITY_mAINTAINER := SINGH
+INFINITY_MAINTAINER := SINGH
 WITH_GAPPS := true
 TARGET_SUPPORTS_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_HAS_UDFS := true
 PRODUCT_NAME := infinity_Tetris
 PRODUCT_DEVICE := Tetris
