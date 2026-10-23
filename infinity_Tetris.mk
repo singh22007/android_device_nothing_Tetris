@@ -22,7 +22,7 @@ PRODUCT_NAME := infinity_Tetris
 PRODUCT_DEVICE := Tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
-PRODUCT_MODEL := A015
+PRODUCT_MODEL := CMF By Nothing
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
