@@ -10,8 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Tetris device
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
-# Inherit common LineageOS configuration.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit common  configuration.
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 INFINITY_BUILD_TYPE := UNOFFICIAL
 INFINITY_MAINTAINER := SINGH
