@@ -75,7 +75,16 @@ Only the three quirks included above are recognized at this point:
 
     2012/07/13 config for MTK OMX Media Codecs, created by Morris Yang (mtk03147)
 -->
-
+<MediaCodecs>
+    <Settings>
+        <Setting name="max-video-encoder-input-buffers" value="10" />
+    </Settings>
+    <Include href="media_codecs_c2.xml" />
+    <Include href="media_codecs_performance.xml" />
+    <Include href="mtk_platform_codecs_config.xml" />
+    <Include href="media_codecs_mediatek_audio.xml" />
+    <Include href="media_codecs_google_audio.xml" />
+</MediaCodecs>
 <MediaCodecs>
     <Settings>
         <Setting name="max-video-encoder-input-buffers" value="10" />
