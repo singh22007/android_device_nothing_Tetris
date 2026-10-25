@@ -17,7 +17,7 @@ $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 INFINITY_MAINTIANER := SINGH
 INFINITY_BUILD_TYPE := UNOFFICIAL
-TARGET_HAS_UDFS := true
+TARGET_HAS_UDFPS := true
 WITH_GAPPS := true
 TARGET_SUPPORTS_BLUR := true
 
