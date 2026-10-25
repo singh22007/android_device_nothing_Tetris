@@ -13,9 +13,15 @@ TARGET_AVB_DISABLE_DM_VERITY := true
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
 # Inherit common LineageOS configuration.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_Tetris
+INFINITY_MAINTIANER := SINGH
+INFINITY_BUILD_TYPE := UNOFFICIAL
+TARGET_HAS_UDFS := true
+WITH_GAPPS := true
+TARGET_SUPPORTS_BLUR := true
+
+PRODUCT_NAME := infinity_Tetris
 PRODUCT_DEVICE := Tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
